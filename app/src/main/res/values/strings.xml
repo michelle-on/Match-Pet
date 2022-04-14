@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">MatchPet</string>
+    <string name="text_app_name">MATCH PET</string>
+    <string name="hint_email">usuario@gmail.com</string>
+    <string name="hint_password">*********</string>
+    <string name="hint_name">Usuario Silveira</string>
+    <string name="textLogin">LOGIN</string>
+    <string name="textRegister">Ainda não possui cadastro? Cadastre-se</string>
+    <string name="text_register">CADASTRAR</string>
+    <string name="text_login">Já possui uma conta? Faça login</string>
+    <string name="menu_home">Home</string>
+    <string name="menu_add">Adicionar</string>
+    <string name="menu_favorite">Favoritos</string>
+    <string name="menu_configuraces">Setting</string>
+    <string name="menu_profile">Profile</string>
+
+</resources>
