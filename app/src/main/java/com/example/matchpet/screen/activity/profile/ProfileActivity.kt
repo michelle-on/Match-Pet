@@ -1,12 +1,9 @@
-package com.example.matchpet.screen.activity
+package com.example.matchpet.screen.activity.Profile
 
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
 import android.view.LayoutInflater
 import androidx.fragment.app.Fragment
 import com.example.matchpet.R
 import com.example.matchpet.base.BaseActivity
-import com.example.matchpet.databinding.ActivityMainBinding
 import com.example.matchpet.databinding.ActivitySettingsBinding
 
 class ProfileActivity : BaseActivity<ActivitySettingsBinding>() {
@@ -19,6 +16,5 @@ class ProfileActivity : BaseActivity<ActivitySettingsBinding>() {
     }
 
     override fun initViews() {
-
     }
 }
