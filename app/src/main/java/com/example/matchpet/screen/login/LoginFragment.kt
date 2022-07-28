@@ -60,11 +60,6 @@ class LoginFragment : BaseFragment<FragmentLoginBinding, LoginViewModel>() {
                         idToken != null -> {
                             onSignInGoogle(idToken)
                         }
-                        password != null -> {
-                            // Got a saved username and password. Use them to authenticate
-                            // with your backend.
-                            Log.d(TAG, "Got password.")
-                        }
                         else -> {
                             // Shouldn't happen.
                             Log.d(TAG, "No ID token or password!")
