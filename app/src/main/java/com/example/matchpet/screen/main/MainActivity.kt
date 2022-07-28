@@ -1,18 +1,16 @@
-package com.example.matchpet.screen
+package com.example.matchpet.screen.main
 
-import android.os.Bundle
-import android.view.LayoutInflater
 import androidx.fragment.app.Fragment
-import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.setupActionBarWithNavController
-import androidx.navigation.ui.setupWithNavController
-import com.example.matchpet.R
-import com.example.matchpet.base.BaseActivity
-import com.example.matchpet.databinding.ActivityMainBinding
+import com.example.matchpet.base.activity.BaseActivity
+import dagger.hilt.android.AndroidEntryPoint
 
-class MainActivity : BaseActivity<ActivityMainBinding>() {
-    override fun setContentView(unit: Any?): Int = R.layout.activity_main
+@AndroidEntryPoint
+class MainActivity : BaseActivity() {
+    override fun getFragment(): Fragment {
+        return MainFragment()
+    }
+
+    /*    override fun setContentView(unit: Any?): Int = R.layout.activity_main
     var fragment: Fragment? = null
 
 
@@ -34,6 +32,5 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
 
         btNavigationView?.setupWithNavController(navController)
 
-    }
-
+    }*/
 }

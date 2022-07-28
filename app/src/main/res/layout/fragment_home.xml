@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".screen.fragment.HomeFragment">
+    tools:context=".screen.home.HomeFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -13,8 +13,8 @@
         <androidx.appcompat.widget.SearchView
             android:id="@+id/search_view"
             android:layout_width="0dp"
-            android:layout_height="50dp"
-            android:layout_margin="10dp"
+            android:layout_height="55dp"
+            android:layout_margin="20dp"
             android:background="@drawable/search"
             android:elevation="2dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -23,10 +23,11 @@
             app:queryHint="Pesquisar Pet" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recycler_pet"
+            android:id="@+id/rvPet"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintTop_toBottomOf="@+id/search_view"
             tools:listitem="@layout/card_view" />
     </androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,6 +5,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
+        android:name=".MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -12,39 +13,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MatchPet">
         <activity
-            android:name=".screen.activity.ProfileActivity"
-            android:exported="false" />
-        <activity
-            android:name=".screen.activity.FavoriteActivity"
-            android:exported="false" />
-        <activity
-            android:name=".screen.activity.HomeActivity"
-            android:exported="false" />
-        <activity
-            android:name=".screen.activity.AddPetActivity"
-            android:exported="false" />
-        <activity
-            android:name=".screen.activity.RegisterActivity"
-            android:exported="false" />
-        <activity
-            android:name=".screen.MainActivity"
-            android:exported="false" />
-        <activity
-            android:name=".screen.activity.LoginActivity"
-            android:exported="false" />
-        <activity
-            android:name=".screen.activity.SplashActivity"
+            android:name=".screen.main.MainActivity"
             android:exported="true">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
-        <meta-data
-            android:name="preloaded_fonts"
-            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

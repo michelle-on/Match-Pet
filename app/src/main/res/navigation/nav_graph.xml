@@ -1,26 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
-             xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/home">
+    app:startDestination="@id/splashFragment">
+
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.example.matchpet.screen.splash.SplashFragment"
+        tools:layout="@layout/fragment_splash">
+
+        <action
+            android:id="@+id/action_splashFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.matchpet.screen.login.LoginFragment"
+        tools:layout="@layout/fragment_login">
+
+        <action
+            android:id="@+id/action_loginFragment_to_home"
+            app:destination="@id/home" />
+
+        <action
+            android:id="@+id/action_loginFragment_to_registerFragment"
+            app:destination="@id/registerFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.example.matchpet.screen.register.RegisterFragment"
+        tools:layout="@layout/fragment_register">
+
+        <action
+            android:id="@+id/action_registerFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+
     <fragment
         android:id="@+id/home"
-        android:name="com.example.matchpet.screen.fragment.HomeFragment"
+        android:name="com.example.matchpet.screen.home.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home">
+
+        <action
+            android:id="@+id/action_home_to_addPet"
+            app:destination="@id/addPet" />
+        <action
+            android:id="@+id/action_home_to_favorite"
+            app:destination="@id/favorite" />
+    </fragment>
+
     <fragment
         android:id="@+id/addPet"
-        android:name="com.example.matchpet.screen.fragment.AddPetFragment"
-        android:label="AddPetFragment" />
+        android:name="com.example.matchpet.screen.registerpet.RegisterPetFragment"
+        android:label="RegisterPetFragment"
+        tools:layout="@layout/fragment_register_pet" />
+
     <fragment
         android:id="@+id/favorite"
-        android:name="com.example.matchpet.screen.fragment.FavoriteFragment"
+        android:name="com.example.matchpet.screen.favorite.FavoriteFragment"
         android:label="fragment_favorite"
         tools:layout="@layout/fragment_favorite" />
+
     <fragment
         android:id="@+id/profile"
-        android:name="com.example.matchpet.screen.fragment.ProfileFragment"
+        android:name="com.example.matchpet.screen.profile.ProfileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" />
 </navigation>

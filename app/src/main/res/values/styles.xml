@@ -47,7 +47,6 @@
     <style name="Rv_Image_Pet">
         <item name="android:layout_width">88dp</item>
         <item name="android:layout_height">88dp</item>
-        <item name="background">@color/black</item>
         <item name="background">@drawable/adapter_image_pets</item>
     </style>
 
