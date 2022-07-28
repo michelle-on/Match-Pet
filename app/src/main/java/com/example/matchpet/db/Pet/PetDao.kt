@@ -1,7 +1,7 @@
-package com.example.matchpet.db
+package com.example.matchpet.db.Pet
 
 import androidx.room.*
-import com.example.matchpet.Pet
+import com.example.matchpet.model.Pet
 
 @Dao
 interface PetDao {

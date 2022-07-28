@@ -5,6 +5,7 @@
     <string name="hint_password">*********</string>
     <string name="hint_name">Usuario Silveira</string>
     <string name="textLogin">LOGIN</string>
+    <string name="textLogout">LOGOUT</string>
     <string name="textRegister">Ainda não possui cadastro? Cadastre-se</string>
     <string name="text_register">CADASTRAR</string>
     <string name="text_login">Já possui uma conta? Faça login</string>
