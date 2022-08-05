@@ -3,6 +3,7 @@ package com.example.matchpet.screen.profile
 import android.view.LayoutInflater
 import android.view.View
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import com.example.matchpet.R
 import com.example.matchpet.base.fragment.BaseFragment
 import com.example.matchpet.databinding.FragmentProfileBinding
@@ -19,8 +20,8 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding, ProfileViewModel>()
 
     override fun onInitViews() {
         binding.btLogout.setOnClickListener {
-            //logout
-            //        Firebase.auth.signOut()
+                    Firebase.auth.signOut()
+            findNavController().navigate(ProfileFragmentDirections.actionProfileToLogin())
         }
     }
 

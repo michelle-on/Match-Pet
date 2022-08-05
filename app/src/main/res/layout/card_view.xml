@@ -17,7 +17,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/imgPet"
+        android:id="@+id/ivPet"
         android:layout_width="100dp"
         android:layout_height="0dp"
         android:layout_margin="5dp"
@@ -36,7 +36,7 @@
         android:text="Pet name"
         android:textColor="@color/black"
         app:layout_constraintBottom_toTopOf="@+id/tvPetCity"
-        app:layout_constraintStart_toEndOf="@id/imgPet"
+        app:layout_constraintStart_toEndOf="@id/ivPet"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -48,7 +48,7 @@
         android:text="Sao Paulo - SP"
         android:textColor="@color/grey"
         app:layout_constraintBottom_toBottomOf="@id/vConteinerComponetsPets"
-        app:layout_constraintStart_toEndOf="@id/imgPet"
+        app:layout_constraintStart_toEndOf="@id/ivPet"
         app:layout_constraintTop_toBottomOf="@+id/tvPetName" />
 
     <androidx.appcompat.widget.AppCompatImageView

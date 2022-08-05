@@ -1,11 +1,11 @@
 package com.example.matchpet.screen.favorite
 
 import android.view.LayoutInflater
-import android.widget.Toast
 import androidx.fragment.app.viewModels
+import com.example.matchpet.adapter.PetAdapter
 import com.example.matchpet.base.fragment.BaseFragment
+import com.example.matchpet.data.model.pet.Pet
 import com.example.matchpet.databinding.FragmentFavoriteBinding
-import com.example.matchpet.screen.favorite.FavoriteViewModel
 
 
 class FavoriteFragment : BaseFragment<FragmentFavoriteBinding, FavoriteViewModel>() {
@@ -17,7 +17,38 @@ class FavoriteFragment : BaseFragment<FragmentFavoriteBinding, FavoriteViewModel
     override val viewModel: FavoriteViewModel by viewModels()
 
     override fun onInitViews() {
-        Toast.makeText(this.context, "Favorite Fragment", Toast.LENGTH_SHORT).show()
+        val listPet = listOf<Pet>(
+            Pet(
+                null,
+                "Wes",
+                "Macho",
+                "Jovem",
+                "Vira-lata",
+                "Medio",
+                "Muito Docil e carinhoso",
+                null,
+                null,
+                "São Paulo",
+                "Gato"
+            ),
+            Pet(
+                null,
+                "Jack",
+                "Macho",
+                "Filhote",
+                "Vira-lata",
+                "Medio",
+                "Medroso, mas agitado ao mesmo tempo",
+                null,
+                null,
+                "São Paulo",
+                "Gato"
+            )
+        )
+
+        val petAdapter = PetAdapter(listPet)
+
+        binding.rvPet.adapter = petAdapter
     }
 
     override fun onInitObservers() {

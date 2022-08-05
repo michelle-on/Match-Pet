@@ -1,10 +1,8 @@
-package com.example.matchpet.model
+package com.example.matchpet.data.model.pet
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import androidx.room.TypeConverter
-import com.example.matchpet.db.DateConverter
 
 @Entity
 class Pet(

@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.matchpet.R
-import com.example.matchpet.model.Pet
+import com.example.matchpet.data.model.pet.Pet
 
 class PetAdapter(
     private val pets: List<Pet>

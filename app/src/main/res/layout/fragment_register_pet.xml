@@ -10,13 +10,11 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:layout_marginBottom="80dp"
-        android:paddingBottom="15dp"
+        android:layout_margin="5dp"
         tools:context=".screen.register.pet.RegisterPetActivity">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/FirstConteiner"
+            android:id="@+id/clFirstConteiner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
@@ -27,7 +25,7 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
-                android:id="@+id/imgPet"
+                android:id="@+id/ivPet"
                 style="@style/Rv_Image_Pet"
                 android:layout_marginStart="20dp"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -35,26 +33,26 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
-                android:id="@+id/camera"
-                android:layout_width="35dp"
-                android:layout_height="35dp"
+                android:id="@+id/ivCamera"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:src="@drawable/ic_camera"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/imgPet" />
+                app:layout_constraintStart_toEndOf="@+id/ivPet" />
 
             <EditText
-                android:id="@+id/PetName"
+                android:id="@+id/etPetName"
                 android:layout_width="0dp"
                 android:layout_height="40dp"
                 android:background="@null"
                 android:hint="Pet name"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="@id/camera"
-                app:layout_constraintTop_toTopOf="@id/imgPet" />
+                app:layout_constraintStart_toStartOf="@id/ivCamera"
+                app:layout_constraintTop_toTopOf="@id/ivPet" />
 
             <EditText
-                android:id="@+id/sexPet"
+                android:id="@+id/etSexPet"
                 android:layout_width="wrap_content"
                 android:layout_height="35dp"
                 android:layout_marginStart="15dp"
@@ -62,14 +60,13 @@
                 android:hint="Macho/Femea"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/camera"
-                app:layout_constraintTop_toTopOf="@id/camera" />
-
+                app:layout_constraintStart_toEndOf="@id/ivCamera"
+                app:layout_constraintTop_toTopOf="@id/ivCamera" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/ConteinerDetails"
+            android:id="@+id/clConteinerDetails"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
@@ -77,7 +74,7 @@
             android:padding="5dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/FirstConteiner">
+            app:layout_constraintTop_toBottomOf="@id/clFirstConteiner">
 
             <TextView
                 android:id="@+id/tvBreed"
@@ -93,7 +90,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <EditText
-                android:id="@+id/BreedPet"
+                android:id="@+id/etBreedPet"
                 android:layout_width="90dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
@@ -113,18 +110,18 @@
                 android:textColor="@color/dark_blue"
                 android:textSize="18sp"
                 android:textStyle="bold"
-                app:layout_constraintStart_toEndOf="@id/BreedPet"
+                app:layout_constraintStart_toEndOf="@id/etBreedPet"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <EditText
-                android:id="@+id/SizePet"
+                android:id="@+id/etSizePet"
                 android:layout_width="90dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="5dp"
                 android:background="@null"
                 android:textSize="18sp"
-                app:layout_constraintEnd_toEndOf="@id/ConteinerDetails"
+                app:layout_constraintEnd_toEndOf="@id/clConteinerDetails"
                 app:layout_constraintStart_toEndOf="@id/tvSize"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -143,7 +140,7 @@
                 app:layout_constraintTop_toBottomOf="@id/tvBreed" />
 
             <EditText
-                android:id="@+id/TypePet"
+                android:id="@+id/etTypePet"
                 android:layout_width="90dp"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
@@ -151,7 +148,7 @@
                 android:textSize="18sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@id/tvType"
-                app:layout_constraintStart_toStartOf="@+id/BreedPet"
+                app:layout_constraintStart_toStartOf="@+id/etBreedPet"
                 app:layout_constraintTop_toTopOf="@id/tvType" />
 
             <TextView
@@ -169,7 +166,7 @@
                 app:layout_constraintTop_toBottomOf="@id/tvBreed" />
 
             <EditText
-                android:id="@+id/AgePet"
+                android:id="@+id/etAgePet"
                 android:layout_width="90dp"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
@@ -178,13 +175,13 @@
                 android:textSize="18sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@id/tvAge"
-                app:layout_constraintStart_toStartOf="@+id/SizePet"
+                app:layout_constraintStart_toStartOf="@+id/etSizePet"
                 app:layout_constraintTop_toTopOf="@id/tvAge" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/ConteinerLocation"
+            android:id="@+id/clConteinerLocation"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
@@ -192,7 +189,7 @@
             android:padding="15dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/ConteinerDetails">
+            app:layout_constraintTop_toBottomOf="@id/clConteinerDetails">
 
             <TextView
                 android:id="@+id/tvCity"
@@ -207,7 +204,7 @@
                 app:layout_constraintStart_toStartOf="parent" />
 
             <EditText
-                android:id="@+id/CityPet"
+                android:id="@+id/etCityPet"
                 android:layout_width="90dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
@@ -228,11 +225,11 @@
                 android:textSize="18sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/PetDistrict"
-                app:layout_constraintStart_toEndOf="@id/CityPet" />
+                app:layout_constraintEnd_toStartOf="@+id/etPetDistrict"
+                app:layout_constraintStart_toEndOf="@id/etCityPet" />
 
             <EditText
-                android:id="@+id/PetDistrict"
+                android:id="@+id/etPetDistrict"
                 android:layout_width="90dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
@@ -245,7 +242,7 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/ConteinerContact"
+            android:id="@+id/clConteinerContact"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
@@ -253,7 +250,7 @@
             android:padding="15dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/ConteinerLocation">
+            app:layout_constraintTop_toBottomOf="@id/clConteinerLocation">
 
             <TextView
                 android:id="@+id/tvPhone"
@@ -269,7 +266,7 @@
                 app:layout_constraintStart_toStartOf="parent" />
 
             <EditText
-                android:id="@+id/Phone"
+                android:id="@+id/etPhone"
                 android:layout_width="90dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
@@ -290,10 +287,10 @@
                 android:textSize="18sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@id/Phone" />
+                app:layout_constraintStart_toEndOf="@id/etPhone" />
 
             <EditText
-                android:id="@+id/Email"
+                android:id="@+id/etEmail"
                 android:layout_width="90dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
@@ -305,7 +302,7 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/ConteinerPersonality"
+            android:id="@+id/clConteinerPersonality"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
@@ -313,7 +310,7 @@
             android:padding="15dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/ConteinerContact">
+            app:layout_constraintTop_toBottomOf="@id/clConteinerContact">
 
             <TextView
                 android:id="@+id/tvPersonality"
@@ -323,11 +320,11 @@
                 android:textColor="@color/dark_blue"
                 android:textSize="18sp"
                 android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="@id/PetPersonality"
+                app:layout_constraintStart_toStartOf="@id/etPetPersonality"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <EditText
-                android:id="@+id/PetPersonality"
+                android:id="@+id/etPetPersonality"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
@@ -340,7 +337,7 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/ConteinerHealth"
+            android:id="@+id/clConteinerHealth"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
@@ -348,7 +345,7 @@
             android:padding="15dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/ConteinerPersonality">
+            app:layout_constraintTop_toBottomOf="@id/clConteinerPersonality">
 
             <TextView
                 android:id="@+id/tvHealth"
@@ -358,11 +355,11 @@
                 android:textColor="@color/dark_blue"
                 android:textSize="18sp"
                 android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="@id/PetHealth"
+                app:layout_constraintStart_toStartOf="@id/etPetHealth"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <EditText
-                android:id="@+id/PetHealth"
+                android:id="@+id/etPetHealth"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
@@ -375,7 +372,7 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/ConteinerCare"
+            android:id="@+id/clConteinerCare"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
@@ -383,7 +380,7 @@
             android:padding="15dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/ConteinerHealth">
+            app:layout_constraintTop_toBottomOf="@id/clConteinerHealth">
 
             <TextView
                 android:id="@+id/tvCare"
@@ -393,11 +390,11 @@
                 android:textColor="@color/dark_blue"
                 android:textSize="18sp"
                 android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="@id/PetCare"
+                app:layout_constraintStart_toStartOf="@id/etPetCare"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <EditText
-                android:id="@+id/PetCare"
+                android:id="@+id/etPetCare"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
@@ -418,33 +415,42 @@
                 android:textColor="@color/red"
                 android:textSize="12sp"
                 android:textStyle="bold"
-                app:layout_constraintTop_toBottomOf="@id/PetCare" />
+                app:layout_constraintTop_toBottomOf="@id/etPetCare" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/button"
+            android:id="@+id/clButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="20dp"
+            android:layout_margin="10dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ConteinerCare">
+            app:layout_constraintTop_toBottomOf="@+id/clConteinerCare">
 
             <Button
                 android:id="@+id/btRegisterPet"
-                android:layout_width="200dp"
-                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:background="@drawable/button"
                 android:padding="15dp"
-                android:text="Register Pet"
+                android:text="Registrar"
                 android:textColor="@color/white"
-                app:layout_constraintBottom_toBottomOf="@id/button"
+                app:layout_constraintBottom_toBottomOf="@id/clButton"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/button" />
+                app:layout_constraintTop_toTopOf="@+id/clButton" />
         </androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.constraintlayout.widget.ConstraintLayout>
 
+        <ProgressBar
+            android:id="@+id/pbLoader"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

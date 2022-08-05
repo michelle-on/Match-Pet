@@ -39,6 +39,16 @@
     <fragment
         android:id="@+id/profile"
         android:name="com.example.matchpet.screen.profile.ProfileFragment"
-        tools:layout="@layout/fragment_profile" />
+        tools:layout="@layout/fragment_profile">
+
+        <action
+            android:id="@+id/action_profile_to_login"
+            app:destination="@id/login" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/login"
+        android:name="com.example.matchpet.screen.login.LoginFragment"
+        tools:layout="@layout/fragment_login" />
 
 </navigation>
