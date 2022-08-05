@@ -7,6 +7,7 @@
         <entry key="app/src/main/res/drawable-v24/logo_app.xml" value="0.3235" />
         <entry key="app/src/main/res/drawable/adapter_image_pets.xml" value="0.34791666666666665" />
         <entry key="app/src/main/res/drawable/adapter_pets.xml" value="0.34791666666666665" />
+        <entry key="app/src/main/res/drawable/bottom_navigation.xml" value="0.205" />
         <entry key="app/src/main/res/drawable/button.xml" value="0.34791666666666665" />
         <entry key="app/src/main/res/drawable/buttonnull.xml" value="0.34791666666666665" />
         <entry key="app/src/main/res/drawable/container_register_pet.xml" value="0.34791666666666665" />
@@ -28,16 +29,19 @@
         <entry key="app/src/main/res/layout/activity_default_for_fragment.xml" value="0.387308533916849" />
         <entry key="app/src/main/res/layout/activity_home.xml" value="0.32760416666666664" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/activity_login_main.xml" value="0.35625" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_register.xml" value="0.5" />
         <entry key="app/src/main/res/layout/activity_settings.xml" value="0.17325227963525835" />
         <entry key="app/src/main/res/layout/activity_splash.xml" value="0.24818840579710144" />
-        <entry key="app/src/main/res/layout/card_view.xml" value="0.32760416666666664" />
+        <entry key="app/src/main/res/layout/card_view.xml" value="0.33" />
         <entry key="app/src/main/res/layout/fragment_add_pet.xml" value="0.5" />
         <entry key="app/src/main/res/layout/fragment_favorite.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/fragment_main.xml" value="0.387308533916849" />
+        <entry key="app/src/main/res/layout/fragment_login_main.xml" value="0.35625" />
+        <entry key="app/src/main/res/layout/fragment_main.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.21" />
+        <entry key="app/src/main/res/layout/fragment_register.xml" value="0.6408163265306123" />
         <entry key="app/src/main/res/layout/fragment_settings.xml" value="0.32760416666666664" />
         <entry key="app/src/main/res/layout/fragment_splash.xml" value="0.6895833333333333" />
         <entry key="app/src/main/res/layout/menu_navigation.xml" value="0.254981884057971" />

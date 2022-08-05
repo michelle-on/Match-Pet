@@ -57,8 +57,8 @@
     </style>
 
     <style name="ContainerComponetsPets">
-        <item name="android:layout_width">327dp</item>
-        <item name="android:layout_height">117dp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
         <item name="android:background">@drawable/adapter_pets</item>
     </style>
 

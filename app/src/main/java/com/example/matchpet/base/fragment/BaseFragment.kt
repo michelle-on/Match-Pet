@@ -32,8 +32,7 @@ abstract class BaseFragment<VB : ViewBinding, VM : BaseViewModel> : Fragment(),
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        onInitObservers()
         onInitViews()
-        activity?.supportFragmentManager?.popBackStack()
+        onInitObservers()
     }
 }

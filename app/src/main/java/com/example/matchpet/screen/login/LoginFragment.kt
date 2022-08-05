@@ -6,8 +6,6 @@ import android.content.IntentSender
 import android.util.Log
 import android.view.LayoutInflater
 import android.widget.Toast
-import androidx.activity.result.IntentSenderRequest
-import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
@@ -18,10 +16,6 @@ import com.example.matchpet.util.ImageUtils
 import com.google.android.gms.auth.api.identity.BeginSignInRequest
 import com.google.android.gms.auth.api.identity.Identity
 import com.google.android.gms.auth.api.identity.SignInClient
-import com.google.android.gms.auth.api.signin.GoogleSignIn
-import com.google.android.gms.common.api.ApiException
-import com.google.android.gms.common.api.CommonStatusCodes
-import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.GoogleAuthProvider
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
@@ -44,6 +38,69 @@ class LoginFragment : BaseFragment<FragmentLoginBinding, LoginViewModel>() {
 
     private lateinit var oneTapClient: SignInClient
     private lateinit var signInRequest: BeginSignInRequest
+
+    override fun onInitViews() {
+        ImageUtils.setImageGlide(binding.icWelcome, R.drawable.img_welcome)
+
+        val currentUser = auth.currentUser
+        if (currentUser == null) {
+            findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToMainActivity())
+        }
+
+        oneTapClient = Identity.getSignInClient(requireActivity())
+        signInRequest = BeginSignInRequest.builder()
+            .setPasswordRequestOptions(
+                BeginSignInRequest.PasswordRequestOptions.builder()
+                    .setSupported(true)
+                    .build()
+            )
+            .setGoogleIdTokenRequestOptions(
+                BeginSignInRequest.GoogleIdTokenRequestOptions.builder()
+                    .setSupported(true)
+                    .setServerClientId(serverClientId)
+                    .setFilterByAuthorizedAccounts(false)
+                    .build()
+            )
+            .setAutoSelectEnabled(false)
+            .build()
+
+        binding.btLogin.setOnClickListener {
+            findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToMainActivity())
+        }
+
+        binding.tvRegister.setOnClickListener {
+            findNavController().navigate(
+                LoginFragmentDirections.actionLoginFragmentToRegisterFragment()
+            )
+        }
+
+        binding.btGoogle.setOnClickListener {
+            displaySignIn()
+//            viewModel.SignInWhitGoogle()
+        }
+    }
+
+    private fun displaySignIn() {
+        oneTapClient.beginSignIn(signInRequest)
+            .addOnSuccessListener(requireActivity()) {
+                try {
+                    startIntentSenderForResult(
+                        it.pendingIntent.intentSender,
+                        REQ_ONE_TAP,
+                        null,
+                        0,
+                        0,
+                        0,
+                        null
+                    )
+                } catch (e: IntentSender.SendIntentException) {
+                    Log.e(TAG, "Couldn't start One Tap UI: ${e.localizedMessage}")
+                }
+            }
+            .addOnFailureListener {
+                Log.d(TAG, it.localizedMessage)
+            }
+    }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
@@ -72,60 +129,6 @@ class LoginFragment : BaseFragment<FragmentLoginBinding, LoginViewModel>() {
         }
     }
 
-    override fun onInitViews() {
-        ImageUtils.setImageGlide(binding.icWelcome, R.drawable.img_welcome)
-
-        oneTapClient = Identity.getSignInClient(requireActivity())
-        signInRequest = BeginSignInRequest.builder()
-            .setPasswordRequestOptions(
-                BeginSignInRequest.PasswordRequestOptions.builder()
-                    .setSupported(true)
-                    .build()
-            )
-            .setGoogleIdTokenRequestOptions(
-                BeginSignInRequest.GoogleIdTokenRequestOptions.builder()
-                    .setSupported(true)
-                    .setServerClientId(serverClientId)
-                    .setFilterByAuthorizedAccounts(true)
-                    .build()
-            )
-            .setAutoSelectEnabled(true)
-            .build()
-
-        binding.tvRegister.setOnClickListener {
-            findNavController().navigate(
-                LoginFragmentDirections.actionLoginFragmentToRegisterFragment()
-            )
-        }
-
-        binding.btGoogle.setOnClickListener {
-            displaySignIn()
-//            viewModel.loginUser()
-        }
-    }
-
-    private fun displaySignIn() {
-        oneTapClient.beginSignIn(signInRequest)
-            .addOnSuccessListener(requireActivity()) {
-                try {
-                    startIntentSenderForResult(
-                        it.pendingIntent.intentSender,
-                        REQ_ONE_TAP,
-                        null,
-                        0,
-                        0,
-                        0,
-                        null
-                    )
-                } catch (e: IntentSender.SendIntentException) {
-                    Log.e(TAG, "Couldn't start One Tap UI: ${e.localizedMessage}")
-                }
-            }
-            .addOnFailureListener {
-                Log.d(TAG, it.localizedMessage)
-            }
-    }
-
     private fun onSignInGoogle(token: String) {
         val credential = GoogleAuthProvider.getCredential(token, null)
         auth.signInWithCredential(credential).addOnCompleteListener(this.requireActivity()) {
@@ -133,9 +136,8 @@ class LoginFragment : BaseFragment<FragmentLoginBinding, LoginViewModel>() {
                 lifecycleScope.launch {
                     delay(1500)
                     findNavController().navigate(
-                        LoginFragmentDirections.actionLoginFragmentToHome()
+                        LoginFragmentDirections.actionLoginFragmentToMainActivity()
                     )
-                    //login is successful
                 }
 
             } else {
