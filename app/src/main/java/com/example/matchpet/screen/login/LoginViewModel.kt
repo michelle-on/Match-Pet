@@ -8,11 +8,13 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class LoginViewModel @Inject constructor() : BaseViewModel() {
+class LoginViewModel @Inject constructor(
+    private val loginRepository: LoginRepository
+) : BaseViewModel() {
 
-    fun loginUser() {
+    fun SignInWhitGoogle() {
         viewModelScope.launch(Dispatchers.IO) {
-//            val
+//            val signInWhitGoogle = loginRepository.SignInWhitGoogle()
         }
     }
 

@@ -3,20 +3,26 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:background="@color/blue_background">
 
     <View
         android:id="@+id/vConteinerComponetsPets"
-        style="@style/ContainerComponetsPets"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
         android:layout_margin="10dp"
+        android:background="@drawable/adapter_pets"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/imgPet"
-        style="@style/Rv_Image_Pet"
+        android:id="@+id/ivPet"
+        android:layout_width="100dp"
+        android:layout_height="0dp"
+        android:layout_margin="5dp"
         android:layout_marginStart="10dp"
+        android:background="@drawable/adapter_image_pets"
         app:layout_constraintBottom_toBottomOf="@id/vConteinerComponetsPets"
         app:layout_constraintStart_toStartOf="@+id/vConteinerComponetsPets"
         app:layout_constraintTop_toTopOf="@id/vConteinerComponetsPets" />
@@ -30,7 +36,7 @@
         android:text="Pet name"
         android:textColor="@color/black"
         app:layout_constraintBottom_toTopOf="@+id/tvPetCity"
-        app:layout_constraintStart_toEndOf="@id/imgPet"
+        app:layout_constraintStart_toEndOf="@id/ivPet"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -42,7 +48,7 @@
         android:text="Sao Paulo - SP"
         android:textColor="@color/grey"
         app:layout_constraintBottom_toBottomOf="@id/vConteinerComponetsPets"
-        app:layout_constraintStart_toEndOf="@id/imgPet"
+        app:layout_constraintStart_toEndOf="@id/ivPet"
         app:layout_constraintTop_toBottomOf="@+id/tvPetName" />
 
     <androidx.appcompat.widget.AppCompatImageView
@@ -54,11 +60,12 @@
         app:layout_constraintTop_toTopOf="@id/vConteinerComponetsPets" />
 
     <TextView
+        android:id="@+id/tvPetType"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:text="CAT"
-        app:layout_constraintTop_toBottomOf="@id/ic_pet"
+        app:layout_constraintEnd_toEndOf="@id/ic_pet"
         app:layout_constraintStart_toStartOf="@id/ic_pet"
-        app:layout_constraintEnd_toEndOf="@id/ic_pet" />
+        app:layout_constraintTop_toBottomOf="@id/ic_pet"
+        tools:text="CAT" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

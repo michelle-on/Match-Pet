@@ -2,10 +2,10 @@ package com.example.matchpet.screen.home
 
 import android.view.LayoutInflater
 import androidx.fragment.app.viewModels
-import com.example.matchpet.base.fragment.BaseFragment
-import com.example.matchpet.databinding.FragmentHomeBinding
-import com.example.matchpet.model.Pet
 import com.example.matchpet.adapter.PetAdapter
+import com.example.matchpet.base.fragment.BaseFragment
+import com.example.matchpet.data.model.pet.Pet
+import com.example.matchpet.databinding.FragmentHomeBinding
 
 class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>() {
     override fun bindingInflater(inflater: LayoutInflater?): FragmentHomeBinding {

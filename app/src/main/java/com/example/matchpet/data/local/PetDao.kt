@@ -1,13 +1,16 @@
-package com.example.matchpet.db.Pet
+package com.example.matchpet.data.local
 
 import androidx.room.*
-import com.example.matchpet.model.Pet
+import com.example.matchpet.data.model.pet.Pet
 
 @Dao
 interface PetDao {
 
     @Query("select * from pet")
     fun getAll(): List<Pet>
+
+    @Query("select id from pet")
+    fun getId(pet: Pet): Int
 
     @Query("select * from pet where id in (:petIds)")
     fun loadAllByIds(petIds: IntArray): List<Pet>

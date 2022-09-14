@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/blue_background"
     tools:context=".screen.home.HomeFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -25,11 +26,25 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvPet"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_height="0dp"
+            android:layout_margin="10dp"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toTopOf="@id/btNavigationView"
             app:layout_constraintTop_toBottomOf="@+id/search_view"
             tools:listitem="@layout/card_view" />
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/btNavigationView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:visibility="gone"
+            android:background="@drawable/bottom_navigation"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rvPet"
+            app:menu="@menu/menubar" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
